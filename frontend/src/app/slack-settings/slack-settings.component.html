@@ -1,0 +1,45 @@
+<div class="container">
+
+  <mat-card>
+    <p>
+      This requires a bot user token from Slack.
+      First, create a new Slack app and set "Development Slack Workspace"
+      to the workspace you want to use. Go through the steps to create
+      a bot user and add the chat-write, chat-write.customize, and chat-write.public scopes
+      to the user. Then install the app to your workspace.
+    </p>
+  </mat-card>
+
+  <br>
+
+  <mat-card>
+    <p>Submit the Bot User OAuth Access Token in the form below.</p>
+  </mat-card>
+
+  <br>
+
+  <form #submitToken="ngForm" (ngSubmit)="addToken(submitToken)" class="was-validated">
+    <div class="form-group">
+      <label for="tokenNum">Submit Bot User OAuth Access Token here</label>
+      <input type="text" class="form-control" id="tokenNum" placeholder="Enter the token" name="slackToken" ngModel
+             required>
+    </div>
+    <button type="submit" class="btn btn-success my-2 my-sm-0">Submit</button>
+  </form>
+
+  <br>
+
+  <form #channel="ngForm" (ngSubmit)="addChannel(channel)" class="was-validated">
+    <div class="form-group">
+      <label for="channelName">Submit Slack channel name here (example: #cool-things)</label>
+      <input type="text" class="form-control" id="channelName" placeholder="Enter the channel" name="channelId" ngModel
+             required>
+    </div>
+    <button type="submit" class="btn btn-success my-2 my-sm-0">Submit</button>
+  </form>
+
+
+</div>
+
+
+

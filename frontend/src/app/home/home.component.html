@@ -1,0 +1,70 @@
+<div class="page-container">
+  <div class="sidebar">
+    <h1>VCR Reader</h1>
+    <div class="list-items">
+
+      <a routerLink="/home/about" routerLinkActive="selected" class="list-item">
+        <i class="material-icons">info</i>
+        About
+      </a>
+
+      <a routerLink="/home/all_articles" routerLinkActive="selected" class="list-item">
+        <i class="material-icons">reorder</i>
+        All Articles
+      </a>
+
+      <a routerLink="/home/favorites" routerLinkActive="selected" class="list-item">
+        <i class="material-icons">star_rate</i>
+        Favorites
+      </a>
+
+      <a routerLink="/home/preview_feed" routerLinkActive="selected" class="list-item">
+        <i class="material-icons">preview</i>
+        Preview Feed
+      </a>
+
+      <a routerLink="/home/add_feed" routerLinkActive="selected" class="list-item">
+        <i class="material-icons">add_circle</i>
+        Add Feed
+      </a>
+
+      <!--<a routerLink="/home/remove_feed" routerLinkActive="selected" class="list-item">
+        <i class="material-icons">remove_circle</i>
+        Remove Feed
+      </a>-->
+
+      <a routerLink="/home/slack_settings" routerLinkActive="selected" class="list-item">
+        <i class="material-icons">settings</i>
+        Slack Settings
+      </a>
+
+
+      <a routerLink="/home/register" routerLinkActive="selected" class="list-item">
+        <i class="material-icons">account_box</i>
+        Login/Register
+      </a>
+
+      <div class="list-item" *ngIf="username">
+        Hi, {{username}}
+      </div>
+
+
+      <!--      <a routerLink="/home/login" routerLinkActive="selected" class="list-item">-->
+      <!--        <i class="material-icons">login</i>-->
+      <!--        Login-->
+      <!--      </a>-->
+
+      <!--<div class="list-item">
+        <button type="button" style="background: none; border: none; color: rgba(255, 255, 255, 0.8);">
+          Add Feed
+        </button>
+      </div>-->
+
+    </div>
+  </div>
+
+  <div class="page-content-container">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

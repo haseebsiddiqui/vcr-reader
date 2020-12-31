@@ -1,0 +1,41 @@
+<div class="container">
+
+  <h1 class="text-success">Preview a Feed</h1>
+
+  <form #previewForm="ngForm" (ngSubmit)="previewFeed(previewForm)" class="was-validated">
+
+    <div class="form-group">
+      <label for="feedURL">Add a feed URL to preview it</label>
+      <input type="text" class="form-control" id="feedURL" placeholder="Enter the feed URL" name="feedurl" ngModel
+             required>
+    </div>
+
+    <button type="submit" class="btn btn-success my-2 my-sm-0">Submit</button>
+  </form>
+
+  <br>
+
+  <div *ngIf="feedTitle">{{'Title: ' + feedTitle}}</div>
+  <div *ngIf="feedLink">{{'Link: ' + feedLink}}</div>
+  <div *ngIf="feedDesc">{{'Description: ' + feedDesc}}</div>
+  <div *ngIf="feedKeys">{{'Feed Keys: ' + feedKeys}}</div>
+  <div *ngIf="feedEntryKeys">{{'Feed Entry Keys: ' + feedEntryKeys}}</div>
+
+  <br>
+
+  <div *ngIf="feedTitle"><p>Entries:</p></div>
+
+  <div *ngFor="let item of feedArrayTest; let i = index">
+    <!--      {{'Entry ' + i + ': '}}-->
+    <!--      {{item}}-->
+    <mat-card>
+        <pre id="json">
+          {{'Entry ' + (i + 1) + ': '}} {{item}}
+        </pre>
+    </mat-card>
+    <br>
+  </div>
+
+
+</div>
+

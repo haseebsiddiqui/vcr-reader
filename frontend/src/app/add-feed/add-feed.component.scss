@@ -1,0 +1,23 @@
+h1 {
+    color: #25334d !important;
+    font-family: "Lato";
+}
+
+label {
+    color: #555555;
+}
+
+.btn, .add-btn {
+    background-color: #25334d;
+    color: #d9e4dd;
+    border: none;
+}
+
+.btn:hover, .add-btn:hover {
+    cursor: pointer;
+    background-color: #33476b;
+}
+
+.container { 
+    margin-left: 0px !important;
+}

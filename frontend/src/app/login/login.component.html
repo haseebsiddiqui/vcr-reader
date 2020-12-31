@@ -1,0 +1,34 @@
+<div class="container">
+  <h1 class="text-success">Login</h1>
+
+  <form #submitToken="ngForm" (ngSubmit)="login(submitToken)" class="was-validated">
+
+    <br>
+
+
+<!--        <div class="form-group" name="password">-->
+<!--            <label for="feedURL">Password:</label>-->
+<!--            <input type="password" class="form-control" id="feedURL" placeholder="Enter a password" name="password" ngModel-->
+<!--                required>-->
+<!--        </div>-->
+
+<!--    <div class="form-field">-->
+<!--      <input name="name" id="login-username" type="email" class="form-input" placeholder="Username" ngModel required>-->
+<!--    </div>-->
+
+
+    <br>
+
+    <div class="form-field">
+      <input name="password" id="login-password" type="password" class="form-input" placeholder="Password" ngModel
+             required>
+    </div>
+
+    <br>
+
+    <div class="form-field">
+      <input type="submit" value="Login">
+    </div>
+
+  </form>
+</div>

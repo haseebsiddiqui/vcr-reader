@@ -1,0 +1,29 @@
+<div class="container">
+
+  <mat-card>
+    <p>Here is a list of your favorite articles.</p>
+  </mat-card>
+
+  <br>
+
+
+  <div *ngFor="let item of favEntries; let i = index">
+    <mat-card>
+        <pre id="json">
+          {{'Entry ' + (i + 1) + ': '}} {{item}}
+        </pre>
+      <mat-card-actions>
+        <button class="fav-btn" mat-button (click)="deleteFav(item)">
+          Delete
+        </button>
+        <button class="fav-btn" mat-button (click)="sendSlack(item)">
+          Send to Slack
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <br>
+  </div>
+
+
+</div>
+

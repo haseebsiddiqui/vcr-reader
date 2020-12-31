@@ -1,0 +1,59 @@
+<div class="container">
+
+  <h1 class="text-success">Login or Register</h1>
+
+  <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" class="was-validated">
+
+    <br>
+
+    <div class="form-field">
+      <input name="username" id="register-username" type="email" class="form-input" placeholder="Username" ngModel required>
+    </div>
+
+    <br>
+
+    <div class="form-field">
+      <input name="password" id="register-password" type="password" class="form-input" placeholder="Password" ngModel
+             required>
+    </div>
+
+    <br>
+
+    <div class="form-field">
+      <input type="submit" value="Register">
+    </div>
+
+  </form>
+
+  <br>
+
+  <form #submitToken="ngForm" (ngSubmit)="login(submitToken)" class="was-validated">
+
+    <br>
+
+    <div class="form-field">
+      <input name="username" id="login-username" type="email" class="form-input" placeholder="Username" ngModel required>
+    </div>
+
+    <br>
+
+    <div class="form-field">
+      <input name="password" id="login-password" type="password" class="form-input" placeholder="Password" ngModel
+             required>
+    </div>
+
+    <br>
+
+    <div class="form-field">
+      <input type="submit" value="Login">
+    </div>
+
+  </form>
+
+  <br>
+
+  <button class="logoff-btn" mat-button (click)="logout()">
+    Logoff
+  </button>
+
+</div>

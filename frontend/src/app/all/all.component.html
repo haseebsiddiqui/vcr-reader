@@ -1,0 +1,31 @@
+<div class="container">
+
+  <mat-card>
+    <p>Here is a list of entries from your feeds, sorted by recent.</p>
+  </mat-card>
+
+  <br>
+
+  <div *ngFor="let item of allEntriesJson; let i = index">
+    <mat-card>
+        <pre id="json">
+          {{'Entry ' + (i + 1) + ': '}}{{item | json}}
+<!--          {{cleanItem(item)}}-->
+<!--          {{JSON.parse(item)}}-->
+        </pre>
+      <mat-card-actions>
+        <button class="all-btn" mat-button (click)="favorite(item)">
+          Favorite
+        </button>
+        <button class="all-btn" mat-button (click)="deleteEntry(item)">
+          Delete
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+    <br>
+
+  </div>
+
+</div>
+

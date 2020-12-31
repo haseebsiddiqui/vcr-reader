@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="text-success">Remove a Feed</h1>
+
+  <form #removeForm="ngForm" (ngSubmit)="removeFeed(removeForm)" class="was-validated">
+
+    <div class="form-group">
+      <label for="feedURL">Enter a feed URL to remove it from the database</label>
+      <input type="text" class="form-control" id="feedURL" placeholder="Enter the feed URL" name="feedurl" ngModel
+             required>
+    </div>
+
+    <!--<button type="button" class="btn btn-success my-2 my-sm-0" style="margin-right: 10px" (click)="getFeeds()">Get
+      Feeds
+    </button>-->
+    <!--    <button type="button" class="btn btn-success my-2 my-sm-0" (click)="">Test</button>-->
+    <button type="submit" class="btn btn-success my-2 my-sm-0">Remove Feed</button>
+  </form>
+
+  <br>
+
+  <p>
+    Current Feeds:
+  </p>
+
+
+  <div *ngFor="let item of feedArrayTest; let i = index">
+    <mat-card>
+        <pre id="jsonEntry">
+          {{'Entry ' + i + ': '}} {{item}}
+        </pre>
+    </mat-card>
+    <br>
+  </div>
+
+
+</div>
+

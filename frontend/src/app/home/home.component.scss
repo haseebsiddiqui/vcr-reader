@@ -1,0 +1,88 @@
+h1 {
+  color: #d9e4dd;
+  margin-top: 15px;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 50px;
+  font-family: "Akronim";
+}
+
+
+p {
+  color: #d9e4dd;
+}
+
+.page-container {
+  display: flex;
+}
+
+.page-content-container {
+  width: 70%;
+  float: left;
+  margin: 30px 0px 30px 290px;
+}
+
+.sidebar {
+  width: 260px;
+  background: #25334d;
+  height: 100%;
+  position: fixed;
+  padding-bottom: 20px;
+}
+
+.list-items {
+  padding-top: 10px;
+}
+
+.list-item, .settings {
+  display: inline-block;
+  align-items: center;
+  position: relative;
+  font-size: 22px;
+  color: #d2d2f7;
+  padding: 10px 20px;
+  font-family: 'Open Sans';
+  cursor: pointer;
+}
+
+.list-item:hover, .settings:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.list-item.selected, .settings.selected {
+  color: white;
+  width: 100%;
+}
+
+.list-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #d9e4dd;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.list-item:hover::before {
+  opacity: 0.35;
+  transform: scaleY(0.5) scaleX(2);
+}
+
+.list-item.selected::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.list-item i.material-icons {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+.settings {
+  margin-top: 135%;
+}

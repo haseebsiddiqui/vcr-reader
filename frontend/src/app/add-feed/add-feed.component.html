@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 class="text-success">Add a Feed</h1>
+  <form #myform="ngForm" (ngSubmit)="newFeed(myform)" class="was-validated">
+
+    <div class="form-group">
+      <label for="feedURL">Add a feed URL in the box below</label>
+      <input type="text" class="form-control" id="feedURL" placeholder="Enter the feed URL" name="feedurl" ngModel
+             required>
+      <!--      <div class="valid"></div>-->
+      <!--      <div class="invalid">Something is wrong with field input</div>-->
+    </div>
+
+    <button type="submit" class="btn btn-success my-2 my-sm-0">
+      Add Feed
+    </button>
+
+    <button class="btn btn-success my-2 my-sm-0" (click)="forceRefresh()" style="margin-left: 10px">
+      Force Refresh
+    </button>
+
+  </form>
+
+<!--    <br>-->
+
+<!--    <div>Time before next refresh: {{refreshTimer}} seconds</div>-->
+  <br>
+
+  <label>
+    Current Feeds:
+  </label>
+
+
+  <div *ngFor="let item of allFeeds; let i = index">
+    <mat-card>
+        <pre id="jsonEntry">
+          {{'Entry ' + (i + 1) + ': '}} {{item}}
+        </pre>
+      <mat-card-actions>
+        <button class="add-btn" mat-button (click)="deleteFeed(item)">
+          Delete
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <br>
+  </div>
+
+
+</div>
+
